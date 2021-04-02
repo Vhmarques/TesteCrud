@@ -33,22 +33,29 @@ namespace TesteCrud
                 Console.WriteLine(" ");
 
                 Console.Write("DIGITE UMA OPÇÃO : ");
-                Option = int.Parse(Console.ReadLine());
+                try { Option = int.Parse(Console.ReadLine()); }
+
+                catch (FormatException e) { Console.WriteLine("Format error! " + e.Message); }
 
                 switch (Option)
                 {
-                    case 1:                       
-                        Console.Write("Favor informar o nome do Cliente: ");
-                        Console.WriteLine(" ");
-                        string name = Console.ReadLine();
-                        Console.Write("Favor informar o CPF do Cliente: ");                        
-                        string cpf = Console.ReadLine();
-                        IdCount += 1;
-                        client.Add(new Client(IdCount, name, cpf));
-                        Console.WriteLine();
-                        Console.WriteLine("Cadastro realizado com sucesso!!!\n\nPressione enter para continuar...");
-                        Console.ReadLine();
-                        Console.Clear();
+                    case 1:
+                        
+                            Console.Write("Favor informar o nome do Cliente: ");
+                            Console.WriteLine(" ");
+                            string name = Console.ReadLine();
+                            Console.Write("Favor informar o CPF do Cliente: ");
+                            string cpf = Console.ReadLine();
+                            IdCount += 1;
+                            client.Add(new Client(IdCount, name, cpf));
+                            Console.WriteLine();
+                            Console.WriteLine("Cadastro realizado com sucesso!!!\n\nPressione enter para continuar...");
+                            Console.ReadLine();
+                            Option = 0;
+                            Console.Clear();
+                        
+                        
+
                         break;
 
                     case 2:
@@ -59,6 +66,7 @@ namespace TesteCrud
                             Console.WriteLine();
                         }                        
                         Console.ReadLine();
+                        Option = 0;
                         Console.Clear();
                         break;
 
@@ -75,6 +83,7 @@ namespace TesteCrud
                         Console.WriteLine();
                         Console.WriteLine("Cadastro realizado com sucesso!!!\n\nPressione enter para continuar...");
                         Console.ReadLine();
+                        Option = 0;
                         Console.Clear();
                         break;
 
@@ -86,12 +95,14 @@ namespace TesteCrud
                         Console.WriteLine();
                         Console.WriteLine("Cadastro realizado com sucesso!!!\n\nPressione enter para continuar...");
                         Console.ReadLine();
+                        Option = 0;
                         Console.Clear();
                         break;                    
 
                     default:
                         Console.WriteLine("Opcao invalida, favor escolha uma opcao do menu");
                         Console.ReadLine();
+                        Option = 0;
                         Console.Clear();
                         break;
                 }
