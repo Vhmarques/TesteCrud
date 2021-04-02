@@ -1,5 +1,7 @@
 ﻿using System;
 using TesteCrud.Menu;
+using System.Collections.Generic;
+using TesteCrud.Entities;
 
 namespace TesteCrud
 {
@@ -8,9 +10,11 @@ namespace TesteCrud
 
         static void Main(string[] args)
         {
-            int option = 0;
+            int Option = 0;
+            int IdCount = 0;
+            List<Client> client = new List<Client>();
 
-            while (option != 6)
+            while (Option != 6)
             {
                 Console.WriteLine("");
 
@@ -44,18 +48,31 @@ namespace TesteCrud
 
                 Console.Write("DIGITE UMA OPÇÃO : ");
 
-                option = int.Parse(Console.ReadLine());
+                Option = int.Parse(Console.ReadLine());
 
 
-                switch (option)
+                switch (Option)
                 {
-                    case 1:
-                        Console.WriteLine("Voce selecionou a opcao 1");
+                    case 1:                       
+                        Console.Write("Favor informar o nome do Cliente: ");
+                        Console.WriteLine(" ");
+                        string name = Console.ReadLine();
+                        Console.Write("Favor informar o CPF do Cliente: ");                        
+                        string cpf = Console.ReadLine();
+                        IdCount += 1;
+                        client.Add(new Client(IdCount, name, cpf));
+                        Console.WriteLine();
+                        Console.WriteLine("Cadastro realizado com sucesso!!!\n\nPressione enter para continuar...");
                         Console.ReadLine();
                         Console.Clear();
                         break;
                     case 2:
-                        Console.WriteLine("Voce selecionou a opcao 2");
+                        foreach (Client obj in client)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine(obj);
+                            Console.WriteLine();
+                        }                        
                         Console.ReadLine();
                         Console.Clear();
                         break;
