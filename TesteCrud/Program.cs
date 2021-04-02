@@ -15,42 +15,25 @@ namespace TesteCrud
             int AuxOperations = 0;
             List<Client> client = new List<Client>();
 
-            while (Option != 6)
-            {
+            while (Option != 5)
+            {                
                 Console.WriteLine("");
-
                 Console.WriteLine("");
-
-                Console.WriteLine("");
-
                 Console.WriteLine("╔═══════════════ MENU DE OPÇÕES ════════════════╗    ");
-
-                Console.WriteLine("║ 1 CADASTRO DE CLIENTES                        ║    ");
-
+                Console.WriteLine("║ 1 CADASTRAR CLIENTES                          ║    ");
                 Console.WriteLine("║                                               ║    ");
-
                 Console.WriteLine("║ 2 CONSULTAR CLIENTES                          ║    ");
-
                 Console.WriteLine("║                                               ║    ");
-
                 Console.WriteLine("║ 3 ATUALIZAR CLIENTE                           ║    ");
-
                 Console.WriteLine("║                                               ║    ");
-
                 Console.WriteLine("║ 4 DELETAR CLIENTE                             ║    ");
-
                 Console.WriteLine("║                                               ║    ");
-
                 Console.WriteLine("║ 5 SAIR                                        ║    ");
-
                 Console.WriteLine("╚═══════════════════════════════════════════════╝    ");
-
                 Console.WriteLine(" ");
 
                 Console.Write("DIGITE UMA OPÇÃO : ");
-
                 Option = int.Parse(Console.ReadLine());
-
 
                 switch (Option)
                 {
@@ -67,6 +50,7 @@ namespace TesteCrud
                         Console.ReadLine();
                         Console.Clear();
                         break;
+
                     case 2:
                         foreach (Client obj in client)
                         {
@@ -77,6 +61,7 @@ namespace TesteCrud
                         Console.ReadLine();
                         Console.Clear();
                         break;
+
                     case 3:
                         Console.Write("Informe o Id do cliente a ser atualizado ");
                         AuxOperations = int.Parse(Console.ReadLine());
@@ -92,6 +77,7 @@ namespace TesteCrud
                         Console.ReadLine();
                         Console.Clear();
                         break;
+
                     case 4:
                         Console.Write("Favor informar o Id do cliente para excluir: ");
                         Console.WriteLine();
@@ -101,12 +87,8 @@ namespace TesteCrud
                         Console.WriteLine("Cadastro realizado com sucesso!!!\n\nPressione enter para continuar...");
                         Console.ReadLine();
                         Console.Clear();
-                        break;
-                    case 5:
-                        Console.WriteLine("Voce selecionou a opcao 5");
-                        Console.ReadLine();
-                        Console.Clear();
-                        break;
+                        break;                    
+
                     default:
                         Console.WriteLine("Opcao invalida, favor escolha uma opcao do menu");
                         Console.ReadLine();
