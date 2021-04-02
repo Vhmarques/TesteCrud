@@ -12,6 +12,7 @@ namespace TesteCrud
         {
             int Option = 0;
             int IdCount = 0;
+            int AuxOperations = 0;
             List<Client> client = new List<Client>();
 
             while (Option != 6)
@@ -82,7 +83,11 @@ namespace TesteCrud
                         Console.Clear();
                         break;
                     case 4:
-                        Console.WriteLine("Voce selecionou a opcao 4");
+                        Console.Write("Favor informar o Id do cliente para excluir: ");
+                        Console.WriteLine();
+                        AuxOperations = int.Parse(Console.ReadLine());
+                        client.RemoveAll(x => x.Id == AuxOperations); 
+                        Console.WriteLine("Cadastro realizado com sucesso!!!\n\nPressione enter para continuar...");
                         Console.ReadLine();
                         Console.Clear();
                         break;
