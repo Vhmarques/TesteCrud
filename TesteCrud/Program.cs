@@ -78,7 +78,17 @@ namespace TesteCrud
                         Console.Clear();
                         break;
                     case 3:
-                        Console.WriteLine("Voce selecionou a opcao 3");
+                        Console.Write("Informe o Id do cliente a ser atualizado ");
+                        AuxOperations = int.Parse(Console.ReadLine());
+                        client.RemoveAll(x => x.Id == AuxOperations);
+                        Console.Write("Favor informar o nome do Cliente: ");
+                        Console.WriteLine(" ");
+                        string Auxname = Console.ReadLine();
+                        Console.Write("Favor informar o CPF do Cliente: ");
+                        string Auxcpf = Console.ReadLine();                        
+                        client.Add(new Client(AuxOperations, Auxname, Auxcpf));
+                        Console.WriteLine();
+                        Console.WriteLine("Cadastro realizado com sucesso!!!\n\nPressione enter para continuar...");
                         Console.ReadLine();
                         Console.Clear();
                         break;
@@ -86,7 +96,8 @@ namespace TesteCrud
                         Console.Write("Favor informar o Id do cliente para excluir: ");
                         Console.WriteLine();
                         AuxOperations = int.Parse(Console.ReadLine());
-                        client.RemoveAll(x => x.Id == AuxOperations); 
+                        client.RemoveAll(x => x.Id == AuxOperations);
+                        Console.WriteLine();
                         Console.WriteLine("Cadastro realizado com sucesso!!!\n\nPressione enter para continuar...");
                         Console.ReadLine();
                         Console.Clear();
