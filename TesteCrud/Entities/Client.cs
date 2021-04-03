@@ -17,6 +17,12 @@ namespace TesteCrud.Entities
             Cpf = cpf;
         }
 
+        public void UpdateClient(string name, string cpf)
+        {
+            Name = name;
+            Cpf = cpf;
+        }
+
         public override string ToString()
         {
             return "Id: " + Id

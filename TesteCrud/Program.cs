@@ -60,7 +60,7 @@ namespace TesteCrud
 
                             break;
 
-                        case 2:
+                        case 2:                            
                             foreach (Client obj in client)
                             {
                                 Console.WriteLine();
@@ -73,15 +73,15 @@ namespace TesteCrud
                             break;
 
                         case 3:
-                            Console.Write("Informe o Id do cliente a ser atualizado ");
+                            Console.Write("Informe o Id do cliente a ser atualizado: ");
                             AuxOperations = int.Parse(Console.ReadLine());
-                            client.RemoveAll(x => x.Id == AuxOperations);
+                            Client cli = client.Find(x => x.Id == AuxOperations);
                             Console.Write("Favor informar o nome do Cliente: ");
                             Console.WriteLine(" ");
                             string Auxname = Console.ReadLine();
                             Console.Write("Favor informar o CPF do Cliente: ");
                             string Auxcpf = Console.ReadLine();
-                            client.Add(new Client(AuxOperations, Auxname, Auxcpf));
+                            cli.UpdateClient(Auxname, Auxcpf);
                             Console.WriteLine();
                             Console.WriteLine("Cadastro realizado com sucesso!!!\n\nPressione enter para continuar...");
                             Console.ReadLine();
